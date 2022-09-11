@@ -7,7 +7,7 @@ let basket = [];
 // Part of Stretch Goals
 const maxItems = 5;
 
-// Part of Stretch Goals
+// Part of Stretch Goals - isFull function
 function isFull() {
     if (basket.length < maxItems) {
         return false;
@@ -22,7 +22,7 @@ function isFull() {
 //     return true;
 // }
 
-// Updated addItem w/isFull function
+// Updated addItem w/isFull for stretch goal
 function addItem( item ) {
     if (isFull() === true) {
         console.log('Basket is full!');
@@ -57,3 +57,22 @@ function empty( basket ) {
 // Testing Basket function
 empty(basket);
 console.log(basket);
+
+// Stretch Goal - removeItem function
+console.log('Adding Apple: ' + addItem('apple'));
+console.log('Adding Orange: ' + addItem('orange'));
+console.log('Adding Banana: ' + addItem('banana'));
+console.log('Adding Grapes: ' + addItem('grapes'));
+console.log('Adding Plum: ' + addItem('plum'));
+
+function removeItem( item ) {
+    if (basket.indexOf(item) > -1) {
+        basket.splice(basket.indexOf(item), 1);
+        return item;
+    }
+    return null;
+}
+// Testing removeItem function
+console.log(removeItem('plum'));
+console.log(basket);
+
